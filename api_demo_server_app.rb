@@ -33,6 +33,14 @@ class ApiDemoServerApp < Sinatra::Base
   end
 
   # Embed a basic Google Map
+  get '/tutorials' do
+    tutorial = params[:tutorial]
+    demo = params[:demo] || 1
+    link = "tutorial_#{tutorial}_demo_#{demo}".to_sym
+    erb link
+  end
+
+  # Embed a basic Google Map
   get '/tutorial_1_demo_1' do
     erb :tutorial_1_demo_1
   end
