@@ -5,6 +5,6 @@ Bundler.require
 
 require 'sinatra'
 
-require './api_demo_server_app.rb'
+require './web_apprentice_demo_app.rb'
 
-run ApiDemoServerApp.new
+run WebApprenticeDemoApp.new

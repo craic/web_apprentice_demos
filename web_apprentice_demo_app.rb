@@ -20,11 +20,19 @@ require 'json'
 
 $:.unshift File.join(File.dirname(__FILE__))
 
-class ApiDemoServerApp < Sinatra::Base
+class WebApprenticeDemoApp < Sinatra::Base
 
   set :root, File.dirname(__FILE__)
 
+  root_dir = File.dirname(__FILE__)
+
   set :static, true
+
+  disable :show_exceptions
+
+  not_found do
+    'That page does not exist'
+  end
 
   get '/' do
     erb :index
@@ -34,8 +42,12 @@ class ApiDemoServerApp < Sinatra::Base
   get '/tutorials' do
     tutorial = params[:tutorial]
     demo = params[:demo] || 1
-    link = "tutorial_#{tutorial}_demo_#{demo}".to_sym
-    erb link
+    link = "tutorial_#{tutorial}_demo_#{demo}"
+    if File.exists?("#{root_dir}/views/#{link}.erb")
+      erb link.to_sym
+    else
+      erb '404'.to_sym
+    end
   end
 
   # # Embed a basic Google Map
