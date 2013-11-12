@@ -88,6 +88,13 @@ body {
     color: #d80;
     text-decoration: none;
   }
+  a:visited {
+    color: #d80;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .tutorial-id {
