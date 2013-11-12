@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 
-# api_demo_server_app.rb
+# web_apprentice_demo_app.rb
 
 # Copyright 2013 Robert Jones  (jones@craic.com)   Craic Computing LLC
 # This code and associated data files are distributed freely under the terms of the MIT license
 
-# This is the demo server for the Craic Web API tutorials
+# This is the demo server for the Craic Web Apprentice tutorials
 
-# Each 'post' is associated with one or more demo pages on this site
+# Each 'tutorial' is associated with one or more demo pages on this site
 # Demo pages may be static or dynamic, but all are written as views
 
 # Naming convention is tutorial_1_demo_1.erb
@@ -56,66 +56,5 @@ class WebApprenticeDemoApp < Sinatra::Base
   # end
 
 
-  # # Embed a single Tweet
-  # get '/tutorial_2_demo_1' do
-  #   erb :tutorial_2_demo_1
-  # end
 
-  # # Embed a Forecast Embed weather forecast
-  # get '/tutorial_3_demo_1' do
-  #   erb :tutorial_3_demo_1
-  # end
-
-  # # Embed a YouTube video
-  # get '/tutorial_4_demo_1' do
-  #   erb :tutorial_4_demo_1
-  # end
-  # # Play an audio file with the audio tag
-  # get '/tutorial_5_demo_1' do
-  #   erb :tutorial_5_demo_1
-  # end
-
-  # # Play an audio file with the audio tag
-  # get '/tutorial_6_demo_1' do
-  #   erb :tutorial_6_demo_1
-  # end
-
-  # # Play an audio file with the audio tag
-  # get '/tutorial_7_demo_1' do
-  #   erb :tutorial_7_demo_1
-  # end
-
-  # # Use Google Fonts in a page
-  # get '/tutorial_8_demo_1' do
-  #   erb :tutorial_8_demo_1
-  # end
-
-  # # Embed Vimeo video in a page
-  # get '/tutorial_9_demo_1' do
-  #   erb :tutorial_9_demo_1
-  # end
-
-  # # Embed Bing map in a page
-  # get '/tutorial_10_demo_1' do
-  #   erb :tutorial_10_demo_1
-  # end
-
-  # # Embed Google Calendar in a page
-  # get '/tutorial_11_demo_1' do
-  #   erb :tutorial_11_demo_1
-  # end
-
-  # get '/tutorial_12_demo_1' do
-  #   erb :tutorial_12_demo_1
-  # end
-  # get '/tutorial_13_demo_1' do
-  #   erb :tutorial_13_demo_1
-  # end
-  # get '/tutorial_14_demo_1' do
-  #   erb :tutorial_14_demo_1
-  # end
-
-  # get '/tutorial_15_demo_1' do
-  #   erb :tutorial_15_demo_1
-  # end
 end
