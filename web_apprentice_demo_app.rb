@@ -31,7 +31,7 @@ class WebApprenticeDemoApp < Sinatra::Base
   disable :show_exceptions
 
   not_found do
-    'That page does not exist'
+    erb '404'.to_sym
   end
 
   get '/' do
