@@ -84,18 +84,20 @@ body {
   color: #d80;
   font-size: 22px;
   text-decoration: none;
-  a {
-    color: #d80;
-    text-decoration: none;
-  }
-  a:visited {
-    color: #d80;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
 }
+
+.web-apprentice-logo  a {
+    color: #d80;
+    text-decoration: none;
+}
+.web-apprentice-logo  a:visited {
+    color: #d80;
+    text-decoration: none;
+}
+.web-apprentice-logo  a:hover {
+    text-decoration: underline;
+}
+
 
 .tutorial-id {
   color: #888;
