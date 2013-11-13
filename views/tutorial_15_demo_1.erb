@@ -35,10 +35,14 @@
   <!-- Start of tutorial code ----------------------------------------------------------  -->
 
 
-<div id="map_canvas"></div>
 
-
-<div id="map_canvas"></div>
+<style>
+#map_canvas {
+  height: 400px;
+  width: 600px;
+  border: 1px solid black;
+}
+</style>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPlbegz3bhu9AnJDCLWsOZM8jF3Hpp8tI&sensor=false"></script>
 <script>
@@ -49,12 +53,6 @@
     'address':   'Eiffel Tower, Paris'
   };
 
-</script>
-
-
-
-<script>
-  var map;
   function initialize() {
 
     var myLatlng = new google.maps.LatLng( mylocation.latitude, mylocation.longitude );
@@ -76,6 +74,9 @@
 
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+
+
+<div id="map_canvas"></div>
 
 
   <!-- End of tutorial code ------------------------------------------------------------  -->
