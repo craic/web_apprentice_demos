@@ -59,7 +59,7 @@
 
       }, function() {
         $('#coordinates').html('Error: The Geolocation service failed.');
-      });
+      }
 
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
@@ -71,7 +71,7 @@
       });
 
       map.setCenter(pos);
-
+);
 
   } else {
     $('#coordinates').html('Error: Your browser doesn\'t support geolocation.');
