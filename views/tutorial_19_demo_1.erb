@@ -42,9 +42,10 @@
  $(document).ready(function() {
 
   var mapOptions = {
-    zoom: 6,
+    zoom: 16,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
+
   map = new google.maps.Map(document.getElementById('map_canvas'),
       mapOptions);
 
@@ -63,7 +64,7 @@
       var infowindow = new google.maps.InfoWindow({
         map: map,
         position: pos,
-        content: 'Location found using HTML5.'
+        content: 'You are here'
       });
 
       map.setCenter(pos);
@@ -83,11 +84,13 @@
 
 <style>
 #map_canvas {
-  width: 400px;
-  height: 300px;
+  width:  400px;
+  height: 400px;
 }
 </style>
+
 <div id='coordinates'></div>
+<br>
 <div id='map_canvas'></div>
 
 <!-- End of tutorial code ------------------------------------------------------------  -->
