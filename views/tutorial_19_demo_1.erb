@@ -48,8 +48,35 @@ $(document).ready(function() {
                 ' Longitude ' + position.coords.longitude.toString();
       $('#coordinates').html(str);
 
-      var pos = new google.maps.LatLng(position.coords.latitude,
-                                       position.coords.longitude);
+      drawMap(position.coords.latitude, position.coords.longitude);
+      // var pos = new google.maps.LatLng(position.coords.latitude,
+      //                                  position.coords.longitude);
+
+      // var mapOptions = {
+      //   zoom: 16,
+      //   center: pos,
+      //   mapTypeId: google.maps.MapTypeId.ROADMAP
+      // };
+      // var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+      // var marker = new google.maps.Marker({
+      //     position: pos,
+      //     map: map,
+      //     title: 'You are here'
+      // });
+
+    }, function() {
+        $('#coordinates').html('Error: The Geolocation service failed.');
+    });
+
+  } else {
+    $('#coordinates').html('Error: Your browser does not support Geolocation.');
+  }
+});
+
+function drawMap(latitude, longitude) {
+      var pos = new google.maps.LatLng(latitude,
+                                       longitude);
 
       var mapOptions = {
         zoom: 16,
@@ -63,15 +90,8 @@ $(document).ready(function() {
           map: map,
           title: 'You are here'
       });
+}
 
-    }, function() {
-        $('#coordinates').html('Error: The Geolocation service failed.');
-    });
-
-  } else {
-    $('#coordinates').html('Error: Your browser does not support Geolocation.');
-  }
-});
 </script>
 
 <style>
