@@ -32,45 +32,63 @@
 </div>
 
 <div class='main'>
-  <!-- Start of tutorial code ----------------------------------------------------------  -->
+<!-- Start of tutorial code ----------------------------------------------------------  -->
 
 <script>
 
+  var map;
  $(document).ready(function() {
+
+  var mapOptions = {
+    zoom: 6,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
 
-    var str =  'Latitude '  + position.coords.latitude.toString() +
-              ' Longitude ' + position.coords.longitude.toString();
+      var str =  'Latitude '  + position.coords.latitude.toString() +
+                ' Longitude ' + position.coords.longitude.toString();
 
-    $('#coordinates').html(str);
+      $('#coordinates').html(str);
 
-    }, function() {
-      handleNoGeolocation(true);
-    });
+      }, function() {
+        $('#coordinates').html('Error: The Geolocation service failed.');
+      });
+
+      var pos = new google.maps.LatLng(position.coords.latitude,
+                                       position.coords.longitude);
+
+      var infowindow = new google.maps.InfoWindow({
+        map: map,
+        position: pos,
+        content: 'Location found using HTML5.'
+      });
+
+      map.setCenter(pos);
+
+
   } else {
-    // Browser doesn't support Geolocation
-      handleNoGeolocation(false);
+    $('#coordinates').html('Error: Your browser doesn\'t support geolocation.');
   }
-
 
 });
 
-
-function handleNoGeolocation(errorFlag) {
-  if (errorFlag) {
-    alert('Error: The Geolocation service failed.');
-  } else {
-    alert('Error: Your browser doesn\'t support geolocation.');
-  }
-}
 </script>
 
+<style>
+#map_canvas {
+  width: 400px;
+  height: 300px;
+}
+</style>
 <div id='coordinates'></div>
+<div id='map_canvas'></div>
 
-  <!-- End of tutorial code ------------------------------------------------------------  -->
+<!-- End of tutorial code ------------------------------------------------------------  -->
 </div>
 
 
