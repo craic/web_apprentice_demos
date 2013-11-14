@@ -46,8 +46,6 @@
 
 
 
-  map = new google.maps.Map(document.getElementById('map_canvas'),
-      mapOptions);
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
@@ -66,6 +64,8 @@
     center: pos,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
+  map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
       // var infowindow = new google.maps.InfoWindow({
       //   map: map,
       //   position: pos,
