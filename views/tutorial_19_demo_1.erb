@@ -44,10 +44,7 @@
   var map;
  $(document).ready(function() {
 
-  var mapOptions = {
-    zoom: 16,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
+
 
   map = new google.maps.Map(document.getElementById('map_canvas'),
       mapOptions);
@@ -64,13 +61,22 @@
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
-      var infowindow = new google.maps.InfoWindow({
-        map: map,
+  var mapOptions = {
+    zoom: 16,
+    center: pos,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+      // var infowindow = new google.maps.InfoWindow({
+      //   map: map,
+      //   position: pos,
+      //   content: 'You are here'
+      // });
+    var marker = new google.maps.Marker({
         position: pos,
-        content: 'You are here'
-      });
-
-      map.setCenter(pos);
+        map: map,
+        title: 'You are here'
+    });
+      // map.setCenter(pos);
 
       }, function() {
         $('#coordinates').html('Error: The Geolocation service failed.');
