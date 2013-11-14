@@ -53,13 +53,17 @@
       handleNoGeolocation(false);
   }
 
-  function handleNoGeolocation(errorFlag) {
+
+});
+
+
+function handleNoGeolocation(errorFlag) {
   if (errorFlag) {
     alert('Error: The Geolocation service failed.');
   } else {
     alert('Error: Your browser doesn\'t support geolocation.');
   }
-});
+}
 </script>
 
 
