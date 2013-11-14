@@ -42,8 +42,10 @@
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
 
-    alert('Latitude ' + position.coords.latitude.toString() +
-          ' Longitude ' + position.coords.longitude.toString());
+    var str =  'Latitude '  + position.coords.latitude.toString() +
+              ' Longitude ' + position.coords.longitude.toString());
+
+    $('#coordinates').html(str);
 
     }, function() {
       handleNoGeolocation(true);
@@ -66,7 +68,7 @@ function handleNoGeolocation(errorFlag) {
 }
 </script>
 
-
+<div id='coordinates'></div>
 
   <!-- End of tutorial code ------------------------------------------------------------  -->
 </div>
