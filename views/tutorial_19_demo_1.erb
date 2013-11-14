@@ -39,55 +39,39 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPlbegz3bhu9AnJDCLWsOZM8jF3Hpp8tI&sensor=false"></script>
 
 <script>
+$(document).ready(function() {
 
-  var map;
- $(document).ready(function() {
-
-
-
-
-  // Try HTML5 geolocation
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
 
       var str =  'Latitude '  + position.coords.latitude.toString() +
                 ' Longitude ' + position.coords.longitude.toString();
-
       $('#coordinates').html(str);
 
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
-  var mapOptions = {
-    zoom: 16,
-    center: pos,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+      var mapOptions = {
+        zoom: 16,
+        center: pos,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-      // var infowindow = new google.maps.InfoWindow({
-      //   map: map,
-      //   position: pos,
-      //   content: 'You are here'
-      // });
-    var marker = new google.maps.Marker({
-        position: pos,
-        map: map,
-        title: 'You are here'
-    });
-      // map.setCenter(pos);
+      var marker = new google.maps.Marker({
+          position: pos,
+          map: map,
+          title: 'You are here'
+      });
 
-      }, function() {
+    }, function() {
         $('#coordinates').html('Error: The Geolocation service failed.');
-      }
-    );
+    });
 
   } else {
-    $('#coordinates').html('Error: Your browser doesn\'t support geolocation.');
+    $('#coordinates').html('Error: Your browser does not support Geolocation.');
   }
-
 });
-
 </script>
 
 <style>
