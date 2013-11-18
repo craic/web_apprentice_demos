@@ -85,11 +85,11 @@ Lon <%= @longitude_1.to_s %>
     }
     var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title: 'photograph'
-    });
+    // var marker = new google.maps.Marker({
+    //     position: myLatlng,
+    //     map: map,
+    //     title: 'photograph'
+    // });
 
     var lineCoordinates = [
         new google.maps.LatLng(<%= @latitude %>, <%= @longitude %>),
@@ -111,6 +111,9 @@ Lon <%= @longitude_1.to_s %>
       strokeWeight: 2,
       map: map,
       icons: [
+        { icon: circle_symbol,
+          offset: '0%' }
+        ],
         { icon: arrow_symbol,
           offset: '100%' }
         ],
