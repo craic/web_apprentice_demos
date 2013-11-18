@@ -43,6 +43,12 @@
 Lat <%= @latitude.to_s %>
 <br>
 Lon <%= @longitude.to_s %>
+
+<br>
+Lat <%= @latitude_1.to_s %>
+<br>
+Lon <%= @longitude_1.to_s %>
+
 <br>
 <h2>Dump of all the Metadata for this Image</h2>
 <table>
@@ -73,7 +79,7 @@ Lon <%= @longitude.to_s %>
 
     var myLatlng = new google.maps.LatLng( <%= @latitude %>, <%= @longitude %> );
     var mapOptions = {
-      zoom: 14,
+      zoom: 13,
       center: myLatlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
     }
