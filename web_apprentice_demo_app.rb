@@ -61,22 +61,6 @@ class WebApprenticeDemoApp < Sinatra::Base
     # this would normally go at the start of your Ruby file
     require 'mini_exiftool'
 
-    @photo = MiniExiftool.new(File.join(root_dir, "/public/assets/photo_metadata_1_400.jpg"))
-
-    # Get the Latitude and Longitude values and convert to decimal format
-
-    @latitude_0  = dms_to_decimal(@photo['GPSLatitude'])
-    @longitude_0 = dms_to_decimal(@photo['GPSLongitude'])
-
-    bearing = @photo['GPSImgDirection'].to_f
-    @latitude_1, @longitude_1 = latlong_offset(@latitude_0, @longitude_0, bearing, 0.5)
-
-    erb :tutorial_22_demo_1
-  end
-
-end
-
-
 # Convert Lat Lon in Deg, Min, Sec to Decimal format
 # e.g 122 deg 25' 25.20" W -> 122.42366666
 def dms_to_decimal(coordinate)
@@ -126,4 +110,22 @@ def latlong_offset(lat0, lng0, bearing, distance)
 
   [ lat1, lng1 ]
 end
+
+    @photo = MiniExiftool.new(File.join(root_dir, "/public/assets/photo_metadata_1_400.jpg"))
+
+    # Get the Latitude and Longitude values and convert to decimal format
+
+    @latitude_0  = dms_to_decimal(@photo['GPSLatitude'])
+    @longitude_0 = dms_to_decimal(@photo['GPSLongitude'])
+
+    bearing = @photo['GPSImgDirection'].to_f
+    @latitude_1, @longitude_1 = latlong_offset(@latitude_0, @longitude_0, bearing, 0.5)
+
+    erb :tutorial_22_demo_1
+  end
+
+end
+
+
+
 
