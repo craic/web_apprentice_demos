@@ -36,8 +36,6 @@
 
 <img src='/assets/photo_metadata_1_400.jpg' alt='photo of snow geese in Skagit Valley, WA, USA'>
 
-<br>
-
 <div id="map_canvas"></div>
 
 <br>
@@ -57,8 +55,8 @@ Lon <%= @longitude.to_s %>
 
 <style>
   #map_canvas {
+    width: 400px;
     height: 400px;
-    width: 600px;
     border: 1px solid black;
   }
 </style>
@@ -75,7 +73,7 @@ Lon <%= @longitude.to_s %>
 
     var myLatlng = new google.maps.LatLng( <%= @latitude %>, <%= @longitude %> );
     var mapOptions = {
-      zoom: 16,
+      zoom: 14,
       center: myLatlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
     }
