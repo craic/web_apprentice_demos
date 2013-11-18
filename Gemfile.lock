@@ -3,6 +3,9 @@ GEM
   specs:
     daemons (1.1.9)
     eventmachine (1.0.3)
+    mini_exiftool (2.3.0)
+    mini_exiftool_vendored (9.2.7.v1)
+      mini_exiftool (>= 1.6.0)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
@@ -20,5 +23,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  mini_exiftool_vendored
   sinatra
   thin
