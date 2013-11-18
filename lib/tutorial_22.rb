@@ -1,6 +1,6 @@
 # lib/tutorial_22.rb  - methods related to tutorial_22
 
-require 'mini_exiftool'
+require 'mini_exiftool_vendored'
 
 # Convert Lat Lon in Deg, Min, Sec to Decimal format
 # e.g 122 deg 25' 25.20" W -> 122.42366666
