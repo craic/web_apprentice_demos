@@ -90,6 +90,28 @@ Lon <%= @longitude_1.to_s %>
         map: map,
         title: 'photograph'
     });
+
+    var lineCoordinates = [
+        new google.maps.LatLng(<%= @latitude %>, <%= @longitude %>),
+        new google.maps.LatLng(<%= @latitude_1 %>, <%= @longitude_1 %>)
+    ];
+
+    var circle_symbol = {
+        path: google.maps.SymbolPath.CIRCLE
+    };
+
+    var path = new google.maps.Polyline({
+      path: lineCoordinates,
+      strokeColor: '#FF0000',
+      strokeOpacity: 1.0,
+      strokeWeight: 2,
+      map: map,
+      icons: [
+        { icon: circle_symbol,
+          offset: '0%' }
+        ],
+      });
+
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
