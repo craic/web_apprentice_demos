@@ -34,9 +34,11 @@
 <div class='main'>
   <!-- Start of tutorial code ----------------------------------------------------------  -->
 
+<div style="display: inline;">
 <img src='/assets/photo_metadata_1_400.jpg' alt='photo of snow geese in Skagit Valley, WA, USA'>
 
-<div id="map_canvas"></div>
+<div id="map_canvas" style='width: 400px; height: 270 px;'></div>
+</div>
 
 <br>
 Lat <%= @latitude.to_s %>
@@ -53,13 +55,7 @@ Lon <%= @longitude.to_s %>
 <% end %>
 </table>
 
-<style>
-  #map_canvas {
-    width: 400px;
-    height: 400px;
-    border: 1px solid black;
-  }
-</style>
+
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPlbegz3bhu9AnJDCLWsOZM8jF3Hpp8tI&sensor=false"></script>
 <script>
