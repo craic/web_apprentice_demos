@@ -100,16 +100,20 @@ Lon <%= @longitude_1.to_s %>
         path: google.maps.SymbolPath.CIRCLE
     };
 
+    var arrow_symbol = {
+        path: google.maps.SymbolPath.FORWARD_OPEN_ARROW
+    };
+
     var path = new google.maps.Polyline({
       path: lineCoordinates,
       strokeColor: '#FF0000',
       strokeOpacity: 1.0,
       strokeWeight: 2,
       map: map,
-      // icons: [
-      //   { icon: circle_symbol,
-      //     offset: '0%' }
-      //   ],
+      icons: [
+        { icon: arrow_symbol,
+          offset: '100%' }
+        ],
       });
 
   }
