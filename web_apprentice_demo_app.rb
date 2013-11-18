@@ -74,13 +74,11 @@ class WebApprenticeDemoApp < Sinatra::Base
     erb :tutorial_22_demo_1
   end
 
-
 end
 
-# examples
-# 48 deg 20' 54.60" N
-# 122 deg 25' 25.20" W
 
+# Convert Lat Lon in Deg, Min, Sec to Decimal format
+# e.g 122 deg 25' 25.20" W -> 122.42366666
 def dms_to_decimal(coordinate)
   decimal = 0.0
   if coordinate =~ /^(\d+)\s+deg\s+(\d+)\'\s+([\d\.]+)\"\s+(\S)\s*$/
@@ -108,7 +106,6 @@ end
 def latlong_offset(lat0, lng0, bearing, distance)
   rlat0 = degrees_to_radians(lat0)
   rlng0 = degrees_to_radians(lng0)
-
   rbearing = degrees_to_radians(bearing)
 
   radius_of_earth = 6371.0  # km

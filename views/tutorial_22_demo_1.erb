@@ -40,14 +40,9 @@
 
 
 <br>
-Lat <%= @latitude.to_s %>
+Latitude / Longitude &nbsp;  <%= sprintf("%10.5f", @latitude_0) %>, <%= sprintf("%10.5f", @longitude_0) %>
 <br>
-Lon <%= @longitude.to_s %>
 
-<br>
-Lat <%= @latitude_1.to_s %>
-<br>
-Lon <%= @longitude_1.to_s %>
 
 <br>
 <h2>Dump of all the Metadata for this Image</h2>
@@ -69,15 +64,9 @@ Lon <%= @longitude_1.to_s %>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPlbegz3bhu9AnJDCLWsOZM8jF3Hpp8tI&sensor=false"></script>
 <script>
-
   function initialize() {
 
-    // var myLocation = {
-    //   'latitude':  ,
-    //   'longitude':
-    // };
-
-    var myLatlng = new google.maps.LatLng( <%= @latitude %>, <%= @longitude %> );
+    var myLatlng = new google.maps.LatLng( <%= @latitude_0 %>, <%= @longitude_0 %> );
     var mapOptions = {
       zoom: 13,
       center: myLatlng,
@@ -85,23 +74,17 @@ Lon <%= @longitude_1.to_s %>
     }
     var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-    // var marker = new google.maps.Marker({
-    //     position: myLatlng,
-    //     map: map,
-    //     title: 'photograph'
-    // });
-
     var lineCoordinates = [
-        new google.maps.LatLng(<%= @latitude %>, <%= @longitude %>),
-        new google.maps.LatLng(<%= @latitude_1 %>, <%= @longitude_1 %>)
+      new google.maps.LatLng(<%= @latitude_0 %>, <%= @longitude_0 %>),
+      new google.maps.LatLng(<%= @latitude_1 %>, <%= @longitude_1 %>)
     ];
 
     var circle_symbol = {
-        path: google.maps.SymbolPath.CIRCLE
+      path: google.maps.SymbolPath.CIRCLE
     };
 
     var arrow_symbol = {
-        path: google.maps.SymbolPath.FORWARD_OPEN_ARROW
+      path: google.maps.SymbolPath.FORWARD_OPEN_ARROW
     };
 
     var path = new google.maps.Polyline({
@@ -115,9 +98,8 @@ Lon <%= @longitude_1.to_s %>
           offset: '0%' },
         { icon: arrow_symbol,
           offset: '100%' }
-        ],
-      });
-
+      ],
+    });
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
