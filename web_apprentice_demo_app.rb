@@ -69,7 +69,7 @@ class WebApprenticeDemoApp < Sinatra::Base
     @longitude = dms_to_decimal(@photo['GPSLongitude'])
 
     bearing = @photo['GPSImgDirection'].to_f
-    @latitude_1, @longitude_1 = latlong_offset(@latitude, @longitude, bearing, 0.200)
+    @latitude_1, @longitude_1 = latlong_offset(@latitude, @longitude, bearing, 0.5)
 
     erb :tutorial_22_demo_1
   end
