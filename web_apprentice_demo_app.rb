@@ -58,16 +58,17 @@ class WebApprenticeDemoApp < Sinatra::Base
   # Extract EXIF metadata from a photo on the server
   get '/tutorial_22_demo_1' do
 
-    # this would normally go at the start of your Ruby file
+    # this file contains methods that are related to this tutorial
     require 'lib/tutorial_22.rb'
 
+    # Extract the metadata from an image file on the server
     @photo = MiniExiftool.new(File.join(root_dir, "/public/assets/photo_metadata_1_400.jpg"))
 
     # Get the Latitude and Longitude values and convert to decimal format
-
     @latitude_0  = dms_to_decimal(@photo['GPSLatitude'])
     @longitude_0 = dms_to_decimal(@photo['GPSLongitude'])
 
+    # Compute a second Lat/Lon pair along the direction the image was taken - used to draw a line on the map
     bearing = @photo['GPSImgDirection'].to_f
     @latitude_1, @longitude_1 = latlong_offset(@latitude_0, @longitude_0, bearing, 0.5)
 

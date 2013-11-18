@@ -1,6 +1,5 @@
-# methods related to tutorial_22
+# lib/tutorial_22.rb  - methods related to tutorial_22
 
-# this would normally go at the start of your Ruby file
 require 'mini_exiftool'
 
 # Convert Lat Lon in Deg, Min, Sec to Decimal format
@@ -44,7 +43,7 @@ def latlong_offset(lat0, lng0, bearing, distance)
   rlng1 = rlng0 + Math.atan2(Math.sin(rbearing) * Math.sin(ang_distance) * Math.cos(rlat0),
                              Math.cos(ang_distance) - Math.sin(rlat0) * Math.sin(rlat1))
 
-  # normalise to -180..+180º
+  # normalize to -180..+180º
   rlng1 = (rlng1 + 3*Math::PI) % (2*Math::PI) - Math::PI
 
   lat1 = radians_to_degrees(rlat1)
