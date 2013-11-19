@@ -16,6 +16,7 @@
 require 'erb'
 require 'open-uri'
 require 'json'
+require 'yaml'
 
 
 $:.unshift File.join(File.dirname(__FILE__))
