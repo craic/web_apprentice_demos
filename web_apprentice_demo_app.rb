@@ -26,6 +26,9 @@ class WebApprenticeDemoApp < Sinatra::Base
 
   root_dir = File.dirname(__FILE__)
 
+  CONFIG = YAML.load(File.read(File.join(root_dir, 'application.yml')))
+  CONFIG.symbolize_keys!
+
   set :static, true
 
   disable :show_exceptions
