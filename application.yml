@@ -1,6 +1,8 @@
 # application.yml
 
-# This file contains all the CRAIC specific API keys, etc - confidential
-# - do not post to github -
+# This file contains PLACEHOLDERS for all the API keys, etc - replace these with your keys
 
-google_maps_api:  'AIzaSyDPlbegz3bhu9AnJDCLWsOZM8jF3Hpp8tI'
+google_maps_api:  'YOUR_API_KEY_HERE'
+
+
+
