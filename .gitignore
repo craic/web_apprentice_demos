@@ -14,4 +14,10 @@ tmp*
 .rbenv-version
 logs*
 .sass-cache
+application.yml.craic
+application.yml.blank
+craic_pre_commit
+craic_post_commit
+
+
 
