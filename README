@@ -2,8 +2,11 @@ Web Apprentice Demo Server
 
 The code in this repository implements the Craic Web Apprentice Demo Server
 
-Web Apprentice (http://apprentice.craic.com) porivdes tutorials on a range of web
-technologies, JavaScript libraries, HTML5 features and remote web services.
+Web Apprentice (http://apprentice.craic.com) proivdes tutorials on a range of web technologies, JavaScript libraries, HTML5 features and remote web services.
 
 Most tutorials have a linked Live Demo which is hosted on this site (http://web-apprentice-demo.craic.com)
+
+
+All this code is made freely available under the MIT License and is available on GitHub at
+https://github.com/craic/web_apprentice_demos
 
